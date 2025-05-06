@@ -6,6 +6,7 @@ Configs for Remnawave Panel
   <summary>
     XHTTP NGINX Configuration (To be configured on EACH Node where you want to use XHTTP and NOT Panel)
   </summary>
+  
 ```nginx
     # gRPC Proxy
     location /VLSpdG9k {
@@ -19,6 +20,7 @@ Configs for Remnawave Panel
   <summary>
     XHTTP Configuration (Don't forget to replace the default values)
   </summary>
+  
 ```json
     {
       "tag": "Give any tag you want",
@@ -57,12 +59,13 @@ Configs for Remnawave Panel
           ]
         }
       }
-    },
+    }
 ```
 </details>
 <details>
   <summary>
     XHTTP Host Config
   </summary>
+  
 ![xhttp-host-config](https://raw.githubusercontent.com/TrulyInfinite/remnawave/567cb19d6661b23c447c8c27e6a177dc326338df/assets/xhttp_host_config.jpg)
 </details>
