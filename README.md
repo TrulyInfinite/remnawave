@@ -1,4 +1,4 @@
-# remnawave
+# Remnawave Unofficial Configs
 Configs for Remnawave Panel
 
 ## XTTTP Inbound with NGINX Configuration
@@ -68,4 +68,49 @@ Configs for Remnawave Panel
   </summary>
   
 ![xhttp-host-config](https://raw.githubusercontent.com/TrulyInfinite/remnawave/567cb19d6661b23c447c8c27e6a177dc326338df/assets/xhttp_host_config.jpg)
+</details>
+
+## Cloudflare Warp
+### Using Fscarmen's Script
+
+1. Run the script using this shell command and follow the instructions from the script.
+```shell
+cd && bash <(curl -fsSL https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh) w
+```
+
+2. After setting up the script, setup the setup this outbound and routing rules in xray config
+
+<details>
+  <summary>
+    Outbounds
+  </summary>
+  
+```json
+{
+  "outboundTag": "warp",
+  "domain": ["geosite:google", "geosite:openai"],
+  "type": "field"
+}
+```
+</details>
+
+<details>
+  <summary>
+    Routing (Use the port you setup in the script)
+  </summary>
+
+```json
+{
+  "tag": "warp",
+  "protocol": "socks",
+  "settings": {
+    "servers": [
+      {
+        "address": "127.0.0.1",
+        "port": 40000
+      }
+    ]
+  }
+}
+```
 </details>
