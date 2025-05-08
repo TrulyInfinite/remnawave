@@ -30,12 +30,11 @@ server {
     listen unix:/dev/shm/nginx.sock ssl proxy_protocol;
     http2 on;
 
+    #SSL Certs required for TLS, but is generally recommended even if it's not TLS
     ssl_certificate "PATH_TO_SSL_FULLCHAIN_CERT";
     ssl_certificate_key "PATH_TO_SSL_PRIVKEY";
     ssl_trusted_certificate "PATH_TO_SSL_FULLCHAIN_CERT";
 
-    root /var/www/html;
-    index index.html;
 }
 
 server {
